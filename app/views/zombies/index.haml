@@ -1,0 +1,9 @@
+%h1 List of Zombies
+= link_to 'New Zombie', new_zombie_path
+%hr
+- @zombie.each do |zombie|
+  %p=link_to zombie.name, zombie_path(zombie)
+  %p= zombie.age
+  = link_to 'edit', edit_zombie_path(zombie)
+  = link_to 'delete', zombie_path(zombie), method: :delete
+  %hr
